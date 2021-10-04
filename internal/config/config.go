@@ -41,7 +41,7 @@ type InternalConfig struct {
 // It needs the path of the env file to be used.
 func NewConfig(env string) (*Config, error) {
 	var config Config
-	if err := godotenv.Load("../../" + env); err != nil {
+	if err := godotenv.Load(env); err != nil {
 		log.Println(errors.Wrap(err, "[NewConfig] error reading .env file, defaulting to OS environment variables"))
 	}
 
